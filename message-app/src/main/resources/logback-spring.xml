@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%5p) ${PID:- } --- [%15.15t{14}] %cyan(%-40.40logger{39}) [%-20.20method{39}] %m%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>utf-8</charset>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
     <logger name="training.spring" level="INFO" additivity="false">
         <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="FILE"/>
     </logger>
+
 </configuration>
