@@ -22,13 +22,10 @@ public class ExampleMessageService implements MessageService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Autowired
-    private LoadBalancerClient loadBalancer;
-
     @Override
     public void send(Message message) {
-        URI uri = loadBalancer.choose(message.getTo()).getUri();
-        restTemplate.postForLocation(uri, Message.class);
+        String url = String.format("http://%s/receive", message.getTo());
+        restTemplate.postForLocation(URI.create(url), Message.class);
         log.info("Message sent: " + message.toString());
     }
 

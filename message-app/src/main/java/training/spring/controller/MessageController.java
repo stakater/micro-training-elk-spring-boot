@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import training.spring.model.Message;
 import training.spring.service.MessageService;
 
@@ -35,7 +36,9 @@ public class MessageController {
     }
 
     @RequestMapping(value = "/receive", method = RequestMethod.POST)
-    public void receiveMessage(Message message) {
+    public
+    @ResponseBody
+    void receiveMessage(Message message) {
         messageService.received(message);
     }
 }
