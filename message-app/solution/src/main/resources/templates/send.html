@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Send Message</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<form action="/send" method="POST">
+    <h3>To:</h3>
+    <input name="to" id="to" type="text"/>
+
+    <h3>Message:</h3>
+    <input name="message" id="message" type="text"/>
+    <br/>
+    <input type="submit" value="send"/>
+</form>
+
+</body>
+</html>

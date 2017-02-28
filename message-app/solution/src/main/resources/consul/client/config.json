@@ -1,0 +1,7 @@
+{
+  "data_dir": "/tmp/consul",
+  "log_level": "DEBUG",
+  "node_name": "markus-client",
+  "server": false,
+  "start_join": ["192.168.1.100"]
+}

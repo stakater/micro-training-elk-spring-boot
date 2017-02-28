@@ -3,11 +3,5 @@
   "log_level": "INFO",
   "node_name": "markus-server",
   "server": true,
-  "bootstrap": true,
-  "addresses": {
-    "https": "0.0.0.0"
-  },
-  "ports": {
-    "http": 9500
-  }
+  "bootstrap": true
 }
